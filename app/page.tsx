@@ -1,23 +1,28 @@
+"use client"
+
+import { useState } from "react";
 import IconSun from "./components/icons/sun";
+import IconMoon from "./components/icons/moon";
+import IconMenu from "./components/icons/menu";
 
 function Home() {
+  const [theme, setTheme] = useState(false);
+
+  const changeTheme = () => {
+    setTheme(!theme)
+  }
+
   return (
     <main className="bg-neutral-800 h-screen text-slate-300">
 
       {/* Nav */}
-      <header className="grid grid-cols-5 mx-52 px-1 py-4">
-        <h2 className="">Lucas Cisternas</h2>
-        <nav className="col-span-3">
-          <ul className="flex justify-start space-x-5">
-            <li>About</li>
-            <li>Work</li>
-            <li>Contact</li>
-            <li>Github</li>
-          </ul>
-        </nav>
-        <div className="flex justify-center">
-          <button className="">
-            <IconSun />
+      <header className="grid grid-cols-2 p-4">
+        <div className="flex justify-start items-center">
+          <h2 className="font-semibold">Lucas Cisternas</h2>
+        </div>
+        <div className="flex justify-end items-center">
+          <button>
+            <IconMenu />
           </button>
         </div>
       </header>
