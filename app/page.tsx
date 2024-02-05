@@ -13,19 +13,26 @@ function Home() {
   }
 
   return (
-    <main className="bg-neutral-800 h-screen text-slate-300">
+    <main className="bg-neutral-800 h-screen text-slate-200 p-2">
 
       {/* Nav */}
-      <header className="grid grid-cols-2 p-4">
-        <div className="flex justify-start items-center">
-          <h2 className="font-semibold">Lucas Cisternas</h2>
+      <header className="grid grid-cols-2">
+        <div className="flex justify-start items-center px-2">
+          <h2 className="font-semibold text-lg">Lucas Cisternas</h2>
         </div>
-        <div className="flex justify-end items-center">
-          <button>
-            <IconMenu />
+        <div className="flex justify-end items-center md:hidden">
+          <button className="border-[1px] border-neutral-600 p-2 rounded-md">
+            <IconMenu width="w-5" height="h-5" />
           </button>
         </div>
       </header>
+
+      {/* Description */}
+      <section className="p-4">
+        <p className="bg-neutral-700 p-3 rounded-md text-center font-light text-base">
+          Hola, soy un Ingeniero de Software localizado en Chile
+        </p>
+      </section>
 
     </main>
   );
