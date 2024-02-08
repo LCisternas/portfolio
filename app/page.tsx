@@ -1,20 +1,9 @@
-"use client"
-
-import { useState } from "react";
 import IconSun from "./components/icons/sun";
-import IconMoon from "./components/icons/moon";
-import IconMenu from "./components/icons/menu";
 import IconCode from "./components/icons/code";
 import IconLinkedin from "./components/icons/linkedin";
 import IconPaper from "./components/icons/paper";
 
 function Home() {
-  const [theme, setTheme] = useState(false);
-
-  const changeTheme = () => {
-    setTheme(!theme)
-  }
-
   return (
     /* bg with primary color */
     <main className="bg-[#212022] h-screen text-[#eeefef] p-2">
@@ -56,12 +45,6 @@ function Home() {
           </button>
         </div>
       </section>
-
-      {/* Title name */}
-      {/* <section className="p-4">
-        <h1 className="text-3xl font-bold">Lucas Cisternas</h1>
-        <p className="font-light text-sm">( Typescript / Python / React / Django )</p>
-      </section> */}
 
       <section className="p-4">
         <h2 className="text-xl font-bold underline underline-offset-[6px] decoration-[#333334] decoration-[6px]">
