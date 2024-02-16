@@ -3,14 +3,12 @@ export const EXPERIENCIE = [
     date: "05/2023 - 11/2023",
     title: "Software Engineer",
     company: "Mountain Creative",
-    description:
-      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
+    description: "Principal encargado del desarrollo de multiples aplicaciones, participando de su elaboracion desde principio a fin, llevando a cabo el codigo, su documentacion y correspondiente despliege a produccion. Trabajando con Nextjs, TypeScript, Supabase y otras tecnologias"
   },
   {
     date: "12/2022 - 12/2023",
     title: "Frontend Developer",
     company: "Genomawork",
-    description:
-      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
-  },
+    description: "Trabajando con React, Redux y Sass, me encargaba de plasmar los Mockups elaborados en Figma en la aplicacion web de Genomawork, procurando cumplir sus funcionalides y diseño responsivo"
+  }
 ]
