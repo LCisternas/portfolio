@@ -11,7 +11,7 @@ export default function ExperienceItem({ title, company, description, link, date
     <div className="relative mx-12 pb-6 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]">
       <div className="relative pb-4 md:col-span-2">
         <div className="sticky top-0">
-          <span className="text-cyan-400 -left-[48px] absolute rounded-full text-5xl">
+          <span className="text-cyan-400 -left-[49px] -top-[12px] absolute rounded-full text-7xl">
             &bull;
           </span>
           <h3 className="text-xl font-bold text-cyan-400">
