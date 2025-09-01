@@ -63,7 +63,7 @@ export default function Hero() {
       >
         <motion.div className="mb-6" variants={itemVariants}>
           <motion.h1
-            className="text-6xl font-bold tracking-tighter sm:text-7xl lg:text-8xl leading-tight"
+            className="text-5xl font-bold tracking-tighter sm:text-7xl lg:text-8xl leading-tight"
             variants={nameVariants}
           >
             <motion.div variants={nameVariants} className="block">
@@ -75,8 +75,8 @@ export default function Hero() {
           </motion.h1>
         </motion.div>
 
-        <motion.p className="max-w-[600px] text-lg text-gray-400 sm:text-xl mb-8" variants={itemVariants}>
-          Visual Artist & Creative Director
+        <motion.p className="text-lg text-gray-400 sm:text-8xl mb-8" variants={itemVariants}>
+          Software Enginner
         </motion.p>
 
         <motion.div variants={itemVariants}>
