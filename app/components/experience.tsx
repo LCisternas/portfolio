@@ -1,62 +1,48 @@
-"use client"
+'use client';
 
-import { motion } from "framer-motion"
-import { useRef } from "react"
-import { useInView } from "framer-motion"
-import ParticleBackground from "./particle-background"
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
+import ParticleBackground from './particle-background';
 
 const experiences = [
   {
-    title: "Intern",
-    company: "Startup Hub",
-    period: "2016 - 2017",
-    description: "Assisted in developing web applications and learned modern web development practices.",
+    title: 'Frontend developer',
+    company: 'Genomawork',
+    period: '2022 - 2023',
+    description:
+      'Desarrollé y mantuve aplicaciones web utilizando React y Redux para gestión de estado compleja. Colaboré con el equipo de UX/UI para traducir mockups en componentes reutilizables y responsivos usando SCSS',
   },
   {
-    title: "Web Developer",
-    company: "Creative Agency",
-    period: "2017 - 2019",
+    title: 'Co-founder | Software engineer',
+    company: 'Retsic',
+    period: '2024 - Presente',
     description:
-      "Built websites and web applications for various clients. Worked with HTML, CSS, JavaScript, and WordPress.",
+      'Desarrollé desde cero un software empresarial de gestión de inventario utilizado por múltiples centros de distribución en Chile. Implementé integración directa con ERP Softland, automatizando procesos de sincronización de datos y reduciendo errores manuales.',
   },
-  {
-    title: "Frontend Developer",
-    company: "Digital Solutions Co.",
-    period: "2019 - 2021",
-    description:
-      "Developed responsive web applications using React and TypeScript. Collaborated with designers and backend engineers to deliver high-quality products.",
-  },
-  {
-    title: "Senior Frontend Engineer",
-    company: "Tech Innovations Inc.",
-    period: "2021 - Present",
-    description:
-      "Lead the frontend development team in building a SaaS platform. Implemented new features, improved performance, and mentored junior developers.",
-  },
-]
+];
 
 function Timeline() {
   // Simple mobile detection without hook dependency
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   return (
     <motion.div
       className={`space-y-12 relative ${
         !isMobile
-          ? "before:absolute before:inset-0 before:left-1/2 before:ml-0 before:-translate-x-px before:border-l-2 before:border-zinc-700 before:h-full before:z-0"
-          : ""
+          ? 'before:absolute before:inset-0 before:left-1/2 before:ml-0 before:-translate-x-px before:border-l-2 before:border-zinc-700 before:h-full before:z-0'
+          : ''
       }`}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
-      {/* Línea central animada */}
       {!isMobile && (
         <motion.div
           className="absolute left-1/2 -translate-x-px w-0.5 bg-gradient-to-b from-white/20 via-white/40 to-white/20 z-0"
           initial={{ height: 0 }}
-          whileInView={{ height: "100%" }}
+          whileInView={{ height: '100%' }}
           transition={{ duration: 1.5, delay: 0.3 }}
           viewport={{ once: true }}
         />
@@ -65,10 +51,14 @@ function Timeline() {
       {experiences.map((experience, index) => (
         <div
           key={index}
-          className={`relative z-10 flex items-center ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+          className={`relative z-10 flex items-center ${
+            index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+          }`}
         >
           <motion.div
-            className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pr-10" : "md:pl-10"}`}
+            className={`w-full md:w-1/2 ${
+              index % 2 === 0 ? 'md:pr-10' : 'md:pl-10'
+            }`}
             initial={{
               opacity: 0,
               x: index % 2 === 0 ? -100 : 100,
@@ -82,7 +72,7 @@ function Timeline() {
             transition={{
               duration: 0.6,
               delay: index * 0.2,
-              ease: "easeOut",
+              ease: 'easeOut',
             }}
             viewport={{ once: true }}
             whileHover={{
@@ -133,13 +123,13 @@ function Timeline() {
                 transition={{
                   duration: 0.5,
                   delay: index * 0.2 + 0.6,
-                  type: "spring",
+                  type: 'spring',
                   stiffness: 200,
                 }}
                 viewport={{ once: true }}
                 whileHover={{
                   scale: 1.2,
-                  boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)",
+                  boxShadow: '0 0 20px rgba(255, 255, 255, 0.3)',
                 }}
               >
                 <motion.div
@@ -158,7 +148,6 @@ function Timeline() {
         </div>
       ))}
 
-      {/* Efecto de partículas flotantes */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
         initial={{ opacity: 0 }}
@@ -187,24 +176,27 @@ function Timeline() {
         ))}
       </motion.div>
     </motion.div>
-  )
+  );
 }
 
 export default function Experience() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="experience" className="relative bg-black py-20 overflow-hidden">
+    <section
+      id="experience"
+      className="relative bg-black py-20 overflow-hidden"
+    >
       <ParticleBackground particleCount={60} />
       <div ref={ref} className="container relative z-10 mx-auto px-4">
         <motion.h2
           className="mb-12 text-center text-3xl font-bold tracking-tighter sm:text-4xl"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          Work Experience
+          Experiencia
         </motion.h2>
 
         <div className="mx-auto max-w-6xl">
@@ -212,5 +204,5 @@ export default function Experience() {
         </div>
       </div>
     </section>
-  )
+  );
 }

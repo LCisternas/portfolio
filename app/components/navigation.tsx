@@ -4,11 +4,11 @@ import { motion } from "framer-motion"
 
 export default function Navigation() {
   const navItems = [
-    { name: "Home", href: "#hero" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Experience", href: "#experience" },
-    { name: "Tech Stack", href: "#tech-stack" },
-    { name: "Connect", href: "#social" },
+    { name: "Inicio", href: "#hero" },
+    { name: "Portafolio", href: "#portfolio" },
+    { name: "Experienca", href: "#experience" },
+    { name: "Stack", href: "#tech-stack" },
+    { name: "Contacto", href: "#social" },
   ]
 
   const scrollToSection = (href: string) => {
