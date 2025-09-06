@@ -1,15 +1,23 @@
-"use client"
+'use client';
 
-import { motion } from "framer-motion"
-import { useRef } from "react"
-import { useInView } from "framer-motion"
-import ParticleBackground from "../particle-background"
+import { motion, type Variants, type Easing } from 'framer-motion';
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
+import ParticleBackground from './particle-background';
 
 export default function TechStack() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const customEase: Easing = [0.25, 0.46, 0.45, 0.94];
 
-  const technologies = ["TypeScript", "Next.js", "React", "Python", "FastAPI", "NestJS"]
+  const technologies = [
+    'TypeScript',
+    'Next.js',
+    'React',
+    'Python',
+    'FastAPI',
+    'NestJS',
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -20,29 +28,32 @@ export default function TechStack() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: "easeOut",
+        duration: 0.8,
+        ease: customEase,
       },
     },
-  }
+  };
 
   return (
-    <section id="tech-stack" className="relative bg-black py-20 overflow-hidden">
+    <section
+      id="tech-stack"
+      className="relative bg-black py-20 overflow-hidden"
+    >
       <ParticleBackground particleCount={40} />
       <div ref={ref} className="container relative z-10 mx-auto px-4">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <motion.h2
             className="text-3xl font-bold tracking-tighter sm:text-4xl mb-4"
@@ -58,7 +69,7 @@ export default function TechStack() {
           className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto"
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate={isInView ? 'visible' : 'hidden'}
         >
           {technologies.map((tech, index) => (
             <motion.div
@@ -89,5 +100,5 @@ export default function TechStack() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

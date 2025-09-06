@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { useInView, type Variants, type Easing } from 'framer-motion';
 import { Github, Linkedin, Youtube } from 'lucide-react';
-import ParticleBackground from '../particle-background';
+import ParticleBackground from './particle-background';
 
 export default function Social() {
   const ref = useRef(null);
