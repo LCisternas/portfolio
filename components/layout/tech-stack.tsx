@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useRef } from "react"
 import { useInView } from "framer-motion"
-import ParticleBackground from "./particle-background"
+import ParticleBackground from "../particle-background"
 
 export default function TechStack() {
   const ref = useRef(null)

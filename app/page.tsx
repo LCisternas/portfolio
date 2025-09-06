@@ -1,9 +1,9 @@
-import Navigation from "./components/navigation"
-import Hero from "./components/hero"
-import Portfolio from "./components/portfolio"
-import Experience from "./components/experience"
-import TechStack from "./components/tech-stack"
-import Social from "./components/social"
+import Navigation from '../components/layout/navigation';
+import Hero from '../components/layout/hero';
+import Portfolio from '../components/layout/portfolio';
+import Experience from '../components/layout/experience';
+import TechStack from '../components/layout/tech-stack';
+import Social from '../components/layout/social';
 
 export default function Page() {
   return (
@@ -15,5 +15,5 @@ export default function Page() {
       <TechStack />
       <Social />
     </main>
-  )
+  );
 }

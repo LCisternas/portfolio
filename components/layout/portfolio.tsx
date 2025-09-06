@@ -10,7 +10,7 @@ import {
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import ParticleBackground from './particle-background';
+import ParticleBackground from '../particle-background';
 import {
   Building2,
   Monitor,
