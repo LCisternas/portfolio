@@ -89,7 +89,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Download className="h-5 w-5 transition-transform duration-300 group-hover:translate-y-0.5" />
-                My CV
+                CV
               </motion.div>
             </Button>
           </Link>
@@ -103,7 +103,7 @@ export default function Hero() {
             }}
             className="absolute bottom-20 left-0 right-0 group flex flex-col items-center justify-center gap-2 text-gray-400 transition-colors hover:text-white"
           >
-            <span className="text-sm font-medium text-center">Scroll Down</span>
+            <span className="text-sm font-medium text-center">Desliza</span>
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{
