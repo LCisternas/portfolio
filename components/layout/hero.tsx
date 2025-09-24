@@ -79,7 +79,7 @@ export default function Hero() {
 
         <motion.div variants={itemVariants}>
           <Link
-            href="https://drive.google.com/file/d/1lPAhyANgkJPopnU8FAk26aUrkY3nf_KU/view?usp=sharing"
+            href="https://drive.google.com/file/d/1rNKp4GyGR_wAhBpOugNHEZ5c_idV3dQW/view?usp=sharing"
             target="_blank"
           >
             <Button size="lg" variant="secondary">
