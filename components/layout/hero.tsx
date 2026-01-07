@@ -1,12 +1,19 @@
 'use client';
 
+import { useState } from 'react';
 import { motion, type Variants, type Easing } from 'framer-motion';
-import { Download } from 'lucide-react';
+import { Download, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ParticleBackground from './particle-background';
-import Link from 'next/link';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 export default function Hero() {
+  const [isCvModalOpen, setIsCvModalOpen] = useState(false);
   const customEase: Easing = [0.25, 0.46, 0.45, 0.94];
 
   const containerVariants: Variants = {
@@ -78,21 +85,20 @@ export default function Hero() {
         </motion.p>
 
         <motion.div variants={itemVariants}>
-          <Link
-            href="https://drive.google.com/file/d/1rNKp4GyGR_wAhBpOugNHEZ5c_idV3dQW/view?usp=sharing"
-            target="_blank"
+          <Button
+            size="lg"
+            variant="secondary"
+            onClick={() => setIsCvModalOpen(true)}
           >
-            <Button size="lg" variant="secondary">
-              <motion.div
-                className="flex items-center gap-2"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Download className="h-5 w-5 transition-transform duration-300 group-hover:translate-y-0.5" />
-                CV
-              </motion.div>
-            </Button>
-          </Link>
+            <motion.div
+              className="flex items-center gap-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Download className="h-5 w-5 transition-transform duration-300 group-hover:translate-y-0.5" />
+              CV
+            </motion.div>
+          </Button>
         </motion.div>
 
         <motion.div variants={itemVariants}>
@@ -118,6 +124,31 @@ export default function Hero() {
           </button>
         </motion.div>
       </motion.div>
+
+      <Dialog open={isCvModalOpen} onOpenChange={setIsCvModalOpen}>
+        <DialogContent className="max-w-4xl h-[90vh] bg-zinc-900 border-zinc-700 p-0 overflow-hidden">
+          <DialogHeader className="p-4 pb-0">
+            <div className="flex items-center justify-between">
+              <DialogTitle className="text-white">Mi CV</DialogTitle>
+              <a
+                href="/Lucas_Cisternas_CV.pdf"
+                download="Lucas_Cisternas_CV.pdf"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition-colors text-sm font-medium"
+              >
+                <Download className="h-4 w-4" />
+                Descargar
+              </a>
+            </div>
+          </DialogHeader>
+          <div className="flex-1 p-4 pt-2 h-full">
+            <iframe
+              src="/Lucas_Cisternas_CV.pdf"
+              className="w-full h-full rounded-md border border-zinc-700"
+              title="CV Lucas Cisternas"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

@@ -23,6 +23,7 @@ import {
   Eye,
   Calendar,
   Award,
+  ExternalLink,
 } from 'lucide-react';
 
 export default function Portfolio() {
@@ -39,7 +40,8 @@ export default function Portfolio() {
       description:
         'Software empresarial desarrollado desde cero para control y gestión de stock e inventario con integración directa al ERP Softland. Implementado en múltiples centros de distribución de Chile en rubros de helados, carnes, abarrotes y materiales de construcción.',
       status: 'En Producción',
-      featured: true
+      featured: true,
+      link: 'https://www.retsic.com/'
     },
     {
       id: 2,
@@ -264,12 +266,17 @@ export default function Portfolio() {
                         >
                           {work.status}
                         </span>
-                        {/* {work.featured && (
-                          <span className="inline-flex items-center gap-1 text-xs font-medium text-yellow-400">
-                            <Award className="h-3 w-3" />
-                            Highlighted Work
-                          </span>
-                        )} */}
+                        {work.link && (
+                          <a
+                            href={work.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-xs font-medium text-blue-400 hover:text-blue-300 transition-colors"
+                          >
+                            <ExternalLink className="h-3 w-3" />
+                            Visitar sitio
+                          </a>
+                        )}
                       </motion.div>
                     </CardContent>
                   </Card>
